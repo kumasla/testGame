@@ -7,7 +7,7 @@ class Monster1 extends Monster {
         this.setBounce(1); // 튕기기 설정
         this.speed = Phaser.Math.Between(50, 100); // 몬스터의 이동 속도를 랜덤하게 설정합니다.
 
-        this.fireRate = 100; // 1초마다 발사
+        this.fireRate = 1000; // 1초마다 발사
         this.nextFire = 0;
     }
 
