@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Top-Down Game</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+ 
+<script type="text/javascript">
+    var config = {
+        type: Phaser.AUTO,
+        width: 1920,
+        height: 1080,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 0 }, // 중력을 0으로 설정하여 탑뷰에 맞게 조정
+                debug: false
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+ 
+    var game = new Phaser.Game(config);
+    
+    function preload() {
+        this.load.image('background', 'assets/field/3.png');
+        this.load.image('player', 'assets/player/록맨.png'); // 플레이어 이미지 로드
+    }
+    
+    var player;
+    
+    function create() {
+        this.add.image(960, 540, 'background');
+        player = this.physics.add.sprite(960, 540, 'player'); // 플레이어 스프라이트 추가
+        player.setScale(0.5); // 플레이어 크기 조정
+    }
+    
+    function update() {
+        if (this.input.keyboard.isDown(Phaser.Input.Keyboard.KeyCodes.LEFT)) {
+            player.setVelocityX(-160);
+        } else if (this.input.keyboard.isDown(Phaser.Input.Keyboard.KeyCodes.RIGHT)) {
+            player.setVelocityX(160);
+        } else {
+            player.setVelocityX(0);
+        }
+        
+        if (this.input.keyboard.isDown(Phaser.Input.Keyboard.KeyCodes.UP)) {
+            player.setVelocityY(-160);
+        } else if (this.input.keyboard.isDown(Phaser.Input.Keyboard.KeyCodes.DOWN)) {
+            player.setVelocityY(160);
+        } else {
+            player.setVelocityY(0);
+        }
+    }
+</script>
+</body>
+</html>
