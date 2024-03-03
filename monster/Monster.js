@@ -29,7 +29,6 @@ class Monster extends Phaser.Physics.Arcade.Sprite {
 
     checkCollision(monster, defender) {
         monster.destroy(); // 미사일 제거
-        console.log('플레이어가 몬스터와 충돌했습니다.');
     }
 
 

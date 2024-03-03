@@ -11,6 +11,7 @@
     </style>
 </head>
 <body>
+    <script src="effects/explosion.js"></script>
     <script src="attack/Missile.js"></script>
     <script src="monster/Monster.js"></script>
     <script src="monster/Monster1.js"></script>
@@ -60,6 +61,8 @@
             missiles = this.physics.add.group({ classType: Missile, runChildUpdate: true }); // 미사일 그룹 초기화
             this.physics.add.overlap(player, missiles, hitPlayer, null, this); // 충돌 처리 설정
             monsterController = new MonsterController(this, player);
+
+            
         }
         
         
