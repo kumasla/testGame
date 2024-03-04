@@ -13,6 +13,9 @@ class Monster extends Phaser.Physics.Arcade.Sprite {
         );
     }
 
+    setupAnimations() {
+    }
+
     update() {
         // 플레이어와 몬스터 사이의 거리를 계산합니다.
         const dx = player.x - this.x;
@@ -28,7 +31,7 @@ class Monster extends Phaser.Physics.Arcade.Sprite {
     }
 
     checkCollision(monster, defender) {
-        monster.destroy(); // 미사일 제거
+        monster.destroy(); // 몬스터 제거
     }
 
 

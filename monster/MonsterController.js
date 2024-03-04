@@ -6,16 +6,16 @@ class MonsterController {
         this.monstersGroup = scene.physics.add.group(); // 몬스터 그룹 생성
         
         scene.load.spritesheet('monster1', 'assets/monster/굼바(마리오).png', {
-            frameWidth: 14,
-            frameHeight: 18
+            frameWidth: 16,
+            frameHeight: 16,
         });
-        scene.load.spritesheet('monster2', 'assets/monster/워들(커비).png', {
+        scene.load.spritesheet('monster2', 'assets/monster/eidt워들(커비).png', {
             frameWidth: 30,
-            frameHeight: 40
+            frameHeight: 25
         });
-        scene.load.spritesheet('monster3', 'assets/monster/쿵쿵(마리오).png', {
-            frameWidth: 32.5,
-            frameHeight: 50
+        scene.load.spritesheet('monster3', 'assets/monster/edit쿵쿵(마리오).png', {
+            frameWidth: 33,
+            frameHeight: 32
         });
     }
 
