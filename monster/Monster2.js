@@ -10,15 +10,7 @@ class Monster2 extends Monster {
     }
 
     setupAnimations() {
-        this.scene.anims.create({
-            key: 'walk_monster2',
-            frames: this.scene.anims.generateFrameNumbers('monster2', {
-                start: 0,
-                end: 3
-            }),
-            frameRate: 10,
-            repeat: -1
-        });
         this.play('walk_monster2');
     }
+
 }

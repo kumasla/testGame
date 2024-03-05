@@ -8,19 +8,9 @@ class Monster1 extends Monster {
         this.speed = Phaser.Math.Between(50, 100); // 몬스터의 이동 속도를 랜덤하게 설정합니다.
 
         this.setupAnimations();
-
     }
 
     setupAnimations() {
-        this.scene.anims.create({
-            key: 'walk_monster1',
-            frames: [
-                { key: 'monster1', frame: 0 },
-                { key: 'monster1', frame: 1 },
-            ],
-            frameRate: 3,
-            repeat: -1
-        });
         this.play('walk_monster1');
     }
 } 

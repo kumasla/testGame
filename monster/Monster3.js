@@ -14,15 +14,6 @@ class Monster3 extends Monster {
     }
 
     setupAnimations() {
-        this.scene.anims.create({
-            key: 'walk_monster3',
-            frames: this.scene.anims.generateFrameNumbers('monster3', {
-                start: 1,
-                end: 2
-            }),
-            frameRate: 1,
-            repeat: -1
-        });
         this.play('walk_monster3');
     }
 

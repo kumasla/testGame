@@ -19,12 +19,10 @@ class Missile extends Phaser.Physics.Arcade.Sprite {
             scale: { start: 1, end: 0 },
             blendMode: 'ADD',
             lifespan: 200,
-            frequency: -1,
-            quantity: 5, 
             on: false
         });
         // 이펙트의 깊이 설정
-        this.explosionParticles.setDepth(1);
+        this.explosionParticles.setDepth(99);
     }
 
     fire(x, y, angle) {
