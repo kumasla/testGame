@@ -11,6 +11,20 @@ class Monster1 extends Monster {
     }
 
     setupAnimations() {
+        const animation = this.scene.anims.get('walk_monster1');
+
+        if(!animation){
+            this.scene.anims.create({
+                key: 'walk_monster1',
+                frames: [
+                    { key: 'monster1', frame: 0 },
+                    { key: 'monster1', frame: 1 },
+                ],
+                frameRate: 3,
+                repeat: -1
+            });
+
+        }
         this.play('walk_monster1');
     }
-} 
+}

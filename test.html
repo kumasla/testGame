@@ -21,7 +21,7 @@
     <script type="text/javascript">
     
         var config = {
-            type: Phaser.AUTO,
+            type: Phaser.Canva,
             width: 1920,
             height: 1080,
             physics: {
@@ -31,11 +31,16 @@
                     debug: false
                 }
             },
+            fps: {
+                target: 60, // 목표 프레임 레이트를 60fps로 설정
+                forceSetTimeOut: false, // true로 설정하면 requestAnimationFrame 대신 setTimeout을 사용
+                deltaHistory: 10 // 프레임 레이트 계산을 위한 최근 델타 시간의 기록 개수 (선택적)
+            },
             scene: {
                 preload: preload,
                 create: create,
                 update: update
-            }
+            },
         };
     
         var game = new Phaser.Game(config);
@@ -62,9 +67,6 @@
             this.cameras.main.startFollow(player, true);
 
             missiles = this.physics.add.group({ classType: Missile, runChildUpdate: true }); // 미사일 그룹 초기화
-            this.physics.add.overlap(player, missiles, hitPlayer, null, this); // 충돌 처리 설정
-            monsterController = new MonsterController(this, player);
-
 
             // 웨이브 남은 시간 표시 기능 시작
             this.waveTimeTotal = 30;
@@ -113,25 +115,6 @@
 
         }
 
-        function hitPlayer(player, missile) {
-            missile.destroy(); // 미사일 삭제
-            // 파티클 이펙트 생성
-            let particles = this.add.particles('explosion');
-            let emitter = particles.createEmitter({
-                speed: 100,
-                scale: { start: 1, end: 0 },
-                blendMode: 'ADD',
-                lifespan: 200,
-                on: false // 즉시 파티클 방출을 시작하지 않음
-            });
-
-            emitter.explode(20, missile.x, missile.y); // 폭발 효과 발생 위치
-
-            // 플레이어에 대한 추가 처리 (예: 데미지 처리) test
-        }
-        
-        
-        
 </script>
  
 </body>

@@ -17,39 +17,6 @@ class MonsterController {
             frameWidth: 33,
             frameHeight: 32
         });
-
-        
-        this.scene.anims.create({
-            key: 'walk_monster1',
-            frames: this.scene.anims.generateFrameNumbers('monster1', {
-                start: 0,
-                end: 3
-            }),
-            frameRate: 3,
-            repeat: -1
-        });
-
-        
-        this.scene.anims.create({
-            key: 'walk_monster2',
-            frames: this.scene.anims.generateFrameNumbers('monster2', {
-                start: 0,
-                end: 2
-            }),
-            frameRate: 10,
-            repeat: -1
-        });
-
-        this.scene.anims.create({
-            key: 'walk_monster3',
-            frames: this.scene.anims.generateFrameNumbers('monster3', {
-                start: 1,
-                end: 2
-            }),
-            frameRate: 1,
-            repeat: -1
-        });
-        
     }
 
 
