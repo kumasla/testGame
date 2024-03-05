@@ -11,6 +11,8 @@ class Monster extends Phaser.Physics.Arcade.Sprite {
             null, // 콜백 컨텍스트
             this // 호출 컨텍스트
         );
+
+        this.expBeadGroup = scene.physics.add.group();
     }
 
     setupAnimations() {
@@ -32,7 +34,21 @@ class Monster extends Phaser.Physics.Arcade.Sprite {
 
     checkCollision(monster, defender) {
         monster.destroy(); // 몬스터 제거
+
+        // 경험치 구슬 생성
+        for (let i = 0; i < 2; i++) { // 원하는 개수로 조정하세요.
+            const expBead = this.expBeadGroup.create(monster.x, monster.y, 'expBead');
+            expBead.setScale(0.01);
+
+            const velocityX = Math.random() * 200 - 100;
+            const velocityY = Math.random() * 200 - 100;
+            expBead.setVelocity(velocityX, velocityY); // 랜덤한 속도로 구슬 이동
+
+
+            // 일정 시간 후에 이동을 멈추도록 타이머 설정
+            defender.scene.time.delayedCall(1000, () => {
+                expBead.setVelocity(0, 0);
+            });
+        }
     }
-
-
 }
