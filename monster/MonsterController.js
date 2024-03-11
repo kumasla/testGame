@@ -21,10 +21,10 @@ class MonsterController {
 
 
     Level(){
-        let level = Math.floor(Math.random() * 100) + 1;
-        if (level >= 90) {
+        let level = Math.floor(Math.random() * 1000) + 1;
+        if (level >= 950) {
             return 3;
-        } else if (level >= 70 && level < 90) { // 70 이상 90 미만
+        } else if (level >= 700 && level < 950) { // 70 이상 90 미만
             return 2;
         } else {
             return 1; // 70 미만
@@ -45,6 +45,7 @@ class MonsterController {
         let monster;
         let spriteKey;
         let level = this.Level();
+        
 
         if(level == 1){
             spriteKey = 'monster1';

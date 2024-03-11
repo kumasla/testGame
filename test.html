@@ -32,7 +32,7 @@
                 }
             },
             fps: {
-                target: 60, // 목표 프레임 레이트를 60fps로 설정
+                target: 20, // 목표 프레임 레이트를 60fps로 설정
                 forceSetTimeOut: false, // true로 설정하면 requestAnimationFrame 대신 setTimeout을 사용
                 deltaHistory: 10 // 프레임 레이트 계산을 위한 최근 델타 시간의 기록 개수 (선택적)
             },
@@ -54,6 +54,8 @@
             this.load.image('missile','assets/attack/attack.png');
             this.load.image('explosion', 'assets/effects/explosion.png');
             this.load.image('expBead', 'assets/attack/expBead.png');
+            this.load.spritesheet('bonusBox', 'assets/item/itemBox.png',{ frameWidth: 34, frameHeight: 46 });
+            
             monsterController = new MonsterController(this, player);
 
             

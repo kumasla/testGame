@@ -42,10 +42,9 @@ class Missile extends Phaser.Physics.Arcade.Sprite {
     }
 
     checkCollision(missile, defender) {
+        this.explosionEmitter.explode(20, missile.x, missile.y);
         missile.destroy(); // 미사일 제거
         console.log('플레이어가 미사일과 충돌했습니다.');
 
-        // 이펙트 실행
-        this.explosionEmitter.explode(20, missile.x, missile.y);
     }
 }
